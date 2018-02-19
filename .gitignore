@@ -2,6 +2,8 @@
 *.xlsx
 *.pyc
 env
+virtualenv
+static.old
 static/bower
 static/admin
 js/plugins
@@ -10,3 +12,5 @@ adgg_tz/app_config.json
 docker-compose.yml
 data
 temp
+odk_dashboard
+vendor
