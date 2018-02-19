@@ -7,6 +7,7 @@ from adgg_tz import views
 
 urlpatterns = [
     url(r'^', include('odk_dashboard.urls')),
+    url(r'^logout$', views.logout_view, name='logout'),
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.show_landing, name='landing_page'),
     url(r'^home$', views.show_dashboard, name='landing_page'),

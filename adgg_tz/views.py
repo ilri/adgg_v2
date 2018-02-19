@@ -13,6 +13,7 @@ from django.views import static
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.middleware import csrf
+from django.contrib.auth import logout
 
 from vendor.odk_parser import OdkParser
 from .adgg import ADGG
@@ -57,6 +58,11 @@ def show_landing(request):
         'data': stats
     }
     return render(request, 'landing_page.html', page_settings)
+
+
+def logout_view(request):
+    logout(request)
+    return show_landing(request)
 
 
 @login_required(login_url='/login')
