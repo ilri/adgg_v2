@@ -89,6 +89,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # our middleware
+    'adgg_tz.middleware.determine_url.DetermineURL',
 ]
 
 ROOT_URLCONF = 'adgg_tz.urls'
@@ -239,8 +242,8 @@ LOOKUP_TABLE = 'dictionary_items'
 TEMPDIR = './temp'
 
 # The number of records to use for the dry run
-IS_DRY_RUN = False
-DRY_RUN_RECORDS = 30
+IS_DRY_RUN = True
+DRY_RUN_RECORDS = 10
 
 ERR_CODES = {
     'duplicate': {'CODE': 10001, 'TAG': 'DUPLICATE'},
@@ -265,3 +268,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'me@gmail.com'
 EMAIL_HOST_PASSWORD = 'password'
+
+# sentry settings
+SENTRY_LOCALHOST = 'http://15a35b6df12347bb938c7d8610624555:d7e4b261b3124626ace680694b2b7be5@localhost:9000/3'
+SENTRY_PRODUCTION = 'http://412f07efec7d461cbcdaf686c3b01e51:c684fccd436e46169c71f8c841ed3b00@sentry.badili.co.ke/3'
