@@ -27,7 +27,6 @@ from vendor.odk_parser import OdkParser
 from vendor.excel_writer import ExcelWriter
 
 terminal = Terminal()
-sentry = Client('http://412f07efec7d461cbcdaf686c3b01e51:c684fccd436e46169c71f8c841ed3b00@sentry.badili.co.ke/3')
 
 LOGGING = {
     'version': 1,
@@ -53,6 +52,11 @@ request = HttpRequest()
 
 class ADGG():
     def __init__(self):
+        global sentry
+        if re.search('localhost', settings.ABSOLUTE_ROOT) is not None:
+            sentry = Client(settings.SENTRY_LOCALHOST)
+        else:
+            sentry = Client(settings.SENTRY_PRODUCTION)
         return
 
     def system_stats(self):
