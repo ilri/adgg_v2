@@ -9,7 +9,7 @@ if __name__ == "__main__":
         django.setup()
 
         from django.core.management.commands.runserver import Command as runserver
-        runserver.default_port = "8001"
+        runserver.default_port = "8089"
         from django.core.management import execute_from_command_line
     except ImportError:
         # The above import may fail for some other reason. Ensure that the

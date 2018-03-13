@@ -78,7 +78,6 @@ INSTALLED_APPS = [
     'adgg_tz',
     'vendor',
     'odk_dashboard',
-    # 'guardian',
     'easy_thumbnails',
 ]
 
