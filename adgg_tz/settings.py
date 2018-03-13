@@ -13,18 +13,41 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 import json
 
-SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
-if 'MYSQL_DATABASE' in os.environ:
-    STATICFILES_DIRS = (
-        os.path.join('/opt/azizi_amp/static/'),
-    )
-else:
-    STATICFILES_DIRS = (
-        os.path.join(SITE_ROOT, '/www/adgg_v2/static/'),
-    )
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# SITE_ROOT is adgg_tz, not adgg_v2!
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
+
+# Absolute path to the directory static files should be collected to.
+# Example: "/var/www/example.com/static/"
+STATIC_ROOT = '/var/www/adgg.ilri.org/static/'
+
+# URL that handles the static files served from STATIC_ROOT.
+# Example: "http://example.com/static/", "http://static.example.com/"
+STATIC_URL = '/static/'
+
+# STATICFILES_DIRS = (
+#     os.path.join('/var/www/adgg.ilri.org/static/'),
+# )
+
+# if 'MYSQL_DATABASE' in os.environ:
+#     STATICFILES_DIRS = (
+#         os.path.join('/opt/adgg_v2/static/'),
+#     )
+# else:
+#     STATICFILES_DIRS = (
+#         os.path.join(SITE_ROOT, '/static/'),
+#     )
+
+
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+#     os.path.join(BASE_DIR, 'adgg_v2/static'),
+# )
 
 
 # Quick-start development settings - unsuitable for production
@@ -34,7 +57,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'xw9xyc$nyym$q0-3-pozdek-f0o_z1xpktpm8ex36k9g&0464v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -208,11 +231,6 @@ USE_L10N = True
 
 USE_TZ = False
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-
-STATIC_URL = 'static/'
 
 DEFAULT_LOCALE = 'English'
 
