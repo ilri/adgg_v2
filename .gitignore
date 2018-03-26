@@ -12,5 +12,3 @@ adgg_tz/app_config.json
 docker-compose.yml
 data
 temp
-odk_dashboard
-vendor
