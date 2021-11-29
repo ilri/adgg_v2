@@ -5,7 +5,7 @@ chardet==3.0.4
 contextlib2==0.5.5
 Django==1.11.4
 django-crontab==0.7.1
-django-mysql==2.1.0
+django-mysql==3.3.0
 easy-thumbnails==2.7
 idna==2.6
 Jinja2==2.9.6
