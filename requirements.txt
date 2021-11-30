@@ -3,7 +3,7 @@ backports-abc==0.5
 certifi==2017.7.27.1
 chardet==3.0.4
 contextlib2==0.5.5
-Django==1.11.4
+Django==2.2.24
 django-crontab==0.7.1
 django-mysql==3.3.0
 easy-thumbnails==2.7
